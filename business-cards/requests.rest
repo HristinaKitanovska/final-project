@@ -1,0 +1,64 @@
+GET http://localhost:3000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2Y3MDMyNWQwNGQ3MjJjYTI4ZTEwNCIsImVtYWlsIjoiYWRtaW5AdGVzdC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NDgzMjcyNDMsImV4cCI6MTY3OTg4NDg0M30.ZCe9JsVl8_XLPKr7w5h7xE58OHFs-GRS7sGEi4YTAos
+
+
+###
+
+POST http://localhost:3000/users
+content-type: application/json
+
+{
+    "full_name": "Martin Andonovski",
+    "email": "client@test.com",
+    "password": "123456",
+    "role": "client"
+}
+
+###
+
+POST http://localhost:3000/users
+content-type: application/json
+
+{
+    "full_name": "Admin",
+    "email": "admin@test.com",
+    "password": "123456",
+    "role": "admin"
+}
+
+### ADMIN
+
+GET http://localhost:3000/users/623f6d8bdd0ac71f92667683
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2Y3MDMyNWQwNGQ3MjJjYTI4ZTEwNCIsImVtYWlsIjoiYWRtaW5AdGVzdC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NDgzMjcyNDMsImV4cCI6MTY3OTg4NDg0M30.ZCe9JsVl8_XLPKr7w5h7xE58OHFs-GRS7sGEi4YTAos
+
+### ADMIN
+
+DELETE  http://localhost:3000/users/623f6d8bdd0ac71f92667683
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2Y3MDMyNWQwNGQ3MjJjYTI4ZTEwNCIsImVtYWlsIjoiYWRtaW5AdGVzdC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NDgzMjcyNDMsImV4cCI6MTY3OTg4NDg0M30.ZCe9JsVl8_XLPKr7w5h7xE58OHFs-GRS7sGEi4YTAos
+
+### CLIENT
+
+DELETE  http://localhost:3000/users/623f791ee78acd7e1ea737eb
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2Y3ZjU4NjJlYTA0ODgwMWVjOWRmMCIsImVtYWlsIjoiY2xpZW50QHRlc3QuY29tIiwicm9sZSI6ImNsaWVudCIsImlhdCI6MTY0ODMyODU0NywiZXhwIjoxNjc5ODg2MTQ3fQ.MkJ_wSJAyjNJq9VU6tUEpydVRnlPeNoDqsI-btTCb3U
+
+### ADMIN LOGIN
+
+POST http://localhost:3000/users/login
+content-type: application/json
+
+{
+    "email": "admin@test.com",
+    "password": "123456"
+}
+
+### CLIENT LOGIN
+
+POST http://localhost:3000/users/login
+content-type: application/json
+
+{
+    "email": "client@test.com",
+    "password": "123456"
+}
